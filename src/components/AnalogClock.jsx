@@ -31,7 +31,7 @@ const AnalogClock = ({ hours, minutes, seconds }) => {
   });
 
   return (
-    <div className="relative w-47 h-47 border-2 border-black rounded-full">
+    <div className="relative w-47 h-47 border-2 bg-gray-200 border-black rounded-full">
       
       {markers}
       
