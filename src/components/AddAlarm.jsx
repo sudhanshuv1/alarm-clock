@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { daysOfWeek } from '../utils/daysOfWeek';
 import { FaPlus } from 'react-icons/fa';
 import Select from 'react-select';
@@ -6,10 +6,18 @@ import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
 
 const AddAlarm = ({ newAlarmTime, setNewAlarmTime, setSelectedOptions, handleSubmit }) => {
+  const [key, setKey] = useState(0);
+
+  const clearFormAndSubmit = (e) => {
+    handleSubmit(e);
+    // Trigger re-render by updating the key
+    setKey(prevKey => prevKey + 1);
+  };
+
   return (
-    <div className='p-4 bg-gray-100 rounded-lg shadow-md max-w-lg mx-auto'>
+    <section className='flex flex-col items-center space-y-4'>
       <h2 className='text-xl font-bold mb-4 text-center'>Set an Alarm</h2>
-      <form className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center' onSubmit={handleSubmit}>
+      <form key={key} className='flex flex-col sm:flex-row space-y-4 mb-8 sm:space-y-0 sm:space-x-4 items-center' onSubmit={clearFormAndSubmit}>
         <TimePicker
           onChange={setNewAlarmTime}
           value={newAlarmTime}
@@ -24,7 +32,7 @@ const AddAlarm = ({ newAlarmTime, setNewAlarmTime, setSelectedOptions, handleSub
           isMulti
           required
           placeholder='Select days'
-          className='flex-grow border border-gray-300 rounded w-full sm:w-48 hover:cursor-pointer overflow:scroll'
+          className='flex-grow border border-gray-300 rounded w-full sm:w-48 hover:cursor-pointer max-h-20'
           classNamePrefix='react-select'
         />
         <button
@@ -36,7 +44,7 @@ const AddAlarm = ({ newAlarmTime, setNewAlarmTime, setSelectedOptions, handleSub
           <FaPlus />
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 

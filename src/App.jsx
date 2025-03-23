@@ -46,8 +46,8 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!newAlarmTime) return
-    let thisAlarm = new Alarm()
     const id = alarmslist.length ? alarmslist[alarmslist.length - 1].id + 1 : 1
+    let thisAlarm = new Alarm(id, '', '', []);
     thisAlarm.adjustID(id)
     thisAlarm.adjustTime(newAlarmTime)
     for(let i=0; i<selectedOptions.length; ++i){
@@ -74,27 +74,33 @@ function App() {
   
   
   return (
-    <div>
-      <h1>Alarm App</h1>
-      <Clock />
-      <Ringalarm
-        displayAlarmState={displayAlarmState}
-        setDisplayAlarmState={setDisplayAlarmState}
-        setActiveAlarmState={setActiveAlarmState} 
-        alarmslist={alarmslist}
-      />
-      <AddAlarm 
-        newAlarmTime={newAlarmTime}
-        setNewAlarmTime={setNewAlarmTime}
-        selectedOptions={selectedOptions}
-        setSelectedOptions={setSelectedOptions}
-        handleSubmit={handleSubmit}
-      />
-      <Alarms
-        alarmslist={alarmslist}
-        handleDelete={handleDelete}
-      />
-    </div>
+    <>
+      <header className='mt-2 mb-6 text-center'>
+        <h1 className='text-4xl font-bold text-blue-600'>Alarm App</h1>
+      </header>
+      <div className='flex min-h-screen min-w-full py-8'>
+        <Clock />
+        <Ringalarm
+          displayAlarmState={displayAlarmState}
+          setDisplayAlarmState={setDisplayAlarmState}
+          setActiveAlarmState={setActiveAlarmState} 
+          alarmslist={alarmslist}
+        />
+        <div className='p-4 flex h-full w-2/3 flex-col bg-gray-100 rounded-lg shadow-md max-w-lg max-h-[1/2] overflow-scroll mx-auto'>
+          <AddAlarm 
+            newAlarmTime={newAlarmTime}
+            setNewAlarmTime={setNewAlarmTime}
+            selectedOptions={selectedOptions}
+            setSelectedOptions={setSelectedOptions}
+            handleSubmit={handleSubmit}
+          />
+          <Alarms
+            alarmslist={alarmslist}
+            handleDelete={handleDelete}
+          />
+        </div>
+      </div>
+    </>
   );
 }
 

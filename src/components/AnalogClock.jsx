@@ -16,13 +16,13 @@ const AnalogClock = ({ hours, minutes, seconds }) => {
   const markers = Array.from({ length: 12 }, (_, i) => {
     const angle = i * 30; 
     const markerStyle = {
-      transform: `rotate(${angle - 90}deg) translate(80px) rotate(${90 - angle}deg)` 
+      transform: `rotate(${angle - 90}deg) translate(90px) rotate(${90 - angle}deg)` 
       
     };
     return (
       <div
         key={i}
-        className="absolute top-21 left-21 w-4 h-4 flex items-center justify-center text-md font-bold"
+        className="absolute top-23 left-24 w-4 h-4 flex items-center justify-center text-md font-bold"
         style={markerStyle}
       >
         {i === 0 ? 12 : i} 
@@ -31,7 +31,7 @@ const AnalogClock = ({ hours, minutes, seconds }) => {
   });
 
   return (
-    <div className="relative w-47 h-47 border-2 bg-gray-200 border-black rounded-full">
+    <div className="relative w-52 h-52 border-2 bg-gray-200 border-black rounded-full">
       
       {markers}
       
