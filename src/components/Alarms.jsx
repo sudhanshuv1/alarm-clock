@@ -3,7 +3,7 @@ import AlarmItem from './AlarmItem';
 
 const Alarms = ({ alarmslist, handleDelete }) => {
   return (
-    <ul className="space-y-4">
+    <ul className="space-y-4 max-h-[50vh] overflow-scroll" >
       {alarmslist.map((item) => (
         <AlarmItem 
           key={item.id}

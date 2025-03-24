@@ -28,7 +28,7 @@ const Clock = () => {
         <Time text={minutes} /><p>:</p>
         <Time text={seconds} />
       </div>
-      <div className="mt-2 text-lg text-gray-600">
+      <div className="mt-4 text-lg text-gray-600">
         {timezone}
       </div>
     </div>
