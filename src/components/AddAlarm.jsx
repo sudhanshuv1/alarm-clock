@@ -32,14 +32,14 @@ const AddAlarm = ({ newAlarmTime, setNewAlarmTime, setSelectedOptions, handleSub
           isMulti
           required
           placeholder='Select days'
-          className='flex-grow border border-gray-300 rounded w-full sm:w-48 hover:cursor-pointer max-h-20'
+          className='flex-grow border border-gray-300 rounded w-full sm:w-48 hover:cursor-pointer'
           classNamePrefix='react-select'
         />
         <button
           id='submit-button'
           type='submit'
           aria-label='Add Alarm'
-          className='flex items-center justify-center p-2 bg-blue-500 text-white hover:cursor-pointer rounded hover:bg-blue-600 w-full sm:w-auto'
+          className='flex items-center justify-center p-2 bg-green-600 text-white hover:cursor-pointer rounded hover:bg-green-700 w-full sm:w-auto'
         >
           <FaPlus />
         </button>
