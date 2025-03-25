@@ -73,8 +73,8 @@ function App() {
 
   return (
     <>
-      <header className='mt-2 mb-6 text-center'>
-        <h1 className='text-4xl font-bold text-green-600'>Alarm App</h1>
+      <header className='mb-6 text-center bg-green-600'>
+        <h1 className='text-4xl font-bold p-2 text-white'>Alarm App</h1>
       </header>
       <div className='flex flex-col md:flex-row min-h-[80vh] min-w-full py-8'>
         <Clock />

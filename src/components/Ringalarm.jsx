@@ -1,8 +1,12 @@
 import { useRef, useEffect } from 'react';
 
 const Ringalarm = ({ displayAlarmState, setDisplayAlarmState, setActiveAlarmState, alarmslist }) => {
+
   const displayAlarmID = useRef(false);
   const snoozeCounter = useRef(0);
+  const alarmSound = useRef(new Audio('./alarm-sound.mp3')); 
+
+  alarmSound.current.loop = true;
 
   const nextSnoozeDisplay = () => {
     if (displayAlarmID.current) {
@@ -10,8 +14,8 @@ const Ringalarm = ({ displayAlarmState, setDisplayAlarmState, setActiveAlarmStat
     }
     setDisplayAlarmState(false);
     if (snoozeCounter.current < 3) {
-      setTimeout(() => { setDisplayAlarmState(true); }, 120000);
       snoozeCounter.current = snoozeCounter.current + 1;
+      setTimeout(() => { setDisplayAlarmState(true); }, 120000);
     } else {
       snoozeCounter.current = 0;
       for (let index = 0; index < alarmslist.length; ++index) {
@@ -26,9 +30,13 @@ const Ringalarm = ({ displayAlarmState, setDisplayAlarmState, setActiveAlarmStat
 
   useEffect(() => {
     if (displayAlarmState) {
+      alarmSound.current.play().catch(error => {
+        console.error('Error playing alarm sound:', error);
+      });
       displayAlarmID.current = setTimeout(nextSnoozeDisplay, 60000);
     } else {
-      return;
+      alarmSound.current.pause();
+      alarmSound.current.currentTime = 0;
     }
   }, [displayAlarmState]);
 
