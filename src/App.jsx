@@ -32,6 +32,10 @@ function App() {
   const checkAlarmIntervalID = useRef(null);
 
   const handleDelete = (id) => {
+    const alarm = alarmslist.find(alarm => alarm.id === id);
+    if (alarm.isActive) {
+      setActiveAlarmState(false);
+    }
     let newAlarms = alarmslist.filter((item) => item.id !== id);
     for (let index = 0; index < newAlarms.length; ++index) {
       newAlarms[index].id = index + 1;
