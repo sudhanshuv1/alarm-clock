@@ -1,11 +1,10 @@
 class Alarm {
 
-  constructor(id,alarmTime,snoozeObject,days) {
+  constructor(id,alarmTime,days) {
     this.id = id;
     this.alarmTime = alarmTime;
-    this.snoozeObject = snoozeObject;
     this.days = days;
-    this.isActive = true;
+    this.isActive = false;
     this.isStopped = false;
   }
 

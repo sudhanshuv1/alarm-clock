@@ -48,7 +48,7 @@ function App() {
     e.preventDefault();
     if (!newAlarmTime) return;
     const id = alarmslist.length ? alarmslist[alarmslist.length - 1].id + 1 : 1;
-    let thisAlarm = new Alarm(id, '', '', []);
+    let thisAlarm = new Alarm(id, '', []);
     thisAlarm.adjustID(id);
     thisAlarm.adjustTime(newAlarmTime);
     for (let i = 0; i < selectedOptions.length; ++i) {
@@ -76,7 +76,7 @@ function App() {
       <header className='mt-2 mb-6 text-center'>
         <h1 className='text-4xl font-bold text-green-600'>Alarm App</h1>
       </header>
-      <div className='flex min-h-[80vh] min-w-full py-8'>
+      <div className='flex flex-col md:flex-row min-h-[80vh] min-w-full py-8'>
         <Clock />
         <Ringalarm
           displayAlarmState={displayAlarmState}
@@ -84,7 +84,7 @@ function App() {
           setActiveAlarmState={setActiveAlarmState}
           alarmslist={alarmslist}
         />
-        <div className='p-4 flex h-full w-2/3 flex-col bg-gray-100 rounded-lg shadow-md max-w-lg mx-auto'>
+        <div className='p-4 flex h-full w-5/6 md:w-2/3 flex-col bg-gray-100 rounded-lg shadow-md max-w-lg mx-auto'>
           <AddAlarm
             newAlarmTime={newAlarmTime}
             setNewAlarmTime={setNewAlarmTime}

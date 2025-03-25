@@ -10,7 +10,6 @@ const AddAlarm = ({ newAlarmTime, setNewAlarmTime, setSelectedOptions, handleSub
 
   const clearFormAndSubmit = (e) => {
     handleSubmit(e);
-    // Trigger re-render by updating the key
     setKey(prevKey => prevKey + 1);
   };
 

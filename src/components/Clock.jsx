@@ -21,7 +21,7 @@ const Clock = () => {
   let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
-    <div className="flex flex-col items-center w-1/3">
+    <div className="flex flex-col items-center w-1/3 mx-auto">
       <AnalogClock hours={hours} minutes={minutes} seconds={seconds} />
       <div className="flex text-2xl digital7-font border p-2 rounded-md mt-8 bg-gray-200 text-black shadow-lg w-38 justify-center">
         <Time text={hours} /><p>:</p>
