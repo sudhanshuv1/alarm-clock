@@ -1,6 +1,6 @@
-# An alarm clock using ReactJS
+# Alarm Clock
 
-This project is live at: https://alarmclock-app.netlify.app<br>
+An alarm clock app using React and TailwindCSS. This project is live at: https://alarmclock-app.netlify.app<br>
 
 It allows the user to set and delete alarms. Additional features:
 <ul>
