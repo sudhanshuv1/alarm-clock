@@ -15,3 +15,10 @@ It allows the user to set and delete alarms. Additional features:
     </li>
 </ul>
 
+## To run the project,
+- Clone the project and run:
+  ```
+  cd alarm-app && npm install
+  npm run dev
+  ```
+- The project will start on http://localhost:5173
