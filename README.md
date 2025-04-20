@@ -15,7 +15,7 @@ It allows the user to set and delete alarms. Additional features:
     </li>
 </ul>
 
-## To run the project,
+## To run locally,
 - Clone the project and run:
   ```
   cd alarm-app && npm install
