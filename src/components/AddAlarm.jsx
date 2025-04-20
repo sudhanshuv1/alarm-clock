@@ -38,7 +38,7 @@ const AddAlarm = ({ newAlarmTime, setNewAlarmTime, setSelectedOptions, handleSub
           id='submit-button'
           type='submit'
           aria-label='Add Alarm'
-          className='flex items-center justify-center p-2 bg-green-600 text-white hover:cursor-pointer rounded hover:bg-green-700 w-full sm:w-auto'
+          className='flex items-center justify-center p-2 bg-violet-600 text-white hover:cursor-pointer rounded hover:bg-violet-700 w-full sm:w-auto'
         >
           <FaPlus />
         </button>

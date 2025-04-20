@@ -73,7 +73,7 @@ function App() {
 
   return (
     <>
-      <header className='mb-6 text-center bg-green-600'>
+      <header className='mb-6 text-center bg-violet-600'>
         <h1 className='text-4xl font-bold p-2 text-white'>Alarm App</h1>
       </header>
       <div className='flex flex-col md:flex-row min-h-[80vh] min-w-full py-8'>
@@ -84,7 +84,7 @@ function App() {
           setActiveAlarmState={setActiveAlarmState}
           alarmslist={alarmslist}
         />
-        <div className='p-4 flex h-full w-5/6 md:w-2/3 flex-col bg-gray-100 rounded-lg shadow-md max-w-lg mx-auto'>
+        <div className='p-4 flex h-full w-5/6 md:w-2/3 flex-col bg-gray-100 border border-gray-600 rounded-lg shadow-md max-w-lg mx-auto'>
           <AddAlarm
             newAlarmTime={newAlarmTime}
             setNewAlarmTime={setNewAlarmTime}
