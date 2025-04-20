@@ -1,6 +1,6 @@
 # An alarm clock using ReactJS
 
-This project is live at: https://reactjs-alarm-clock.netlify.app<br>
+This project is live at: https://alarmclock-app.netlify.app<br>
 
 It allows the user to set and delete alarms. Additional features:
 <ul>
@@ -11,6 +11,7 @@ It allows the user to set and delete alarms. Additional features:
     <li><strong>STOP</strong>: This stops the alarm.</li>
     <li><strong>SNOOZE</strong>: This will snooze the alarm, <i>i.e.</i>, the alarm will ring again after 2 minutes. The user can snooze 4 times, after which the alarm stops automatically.</li>
     </ol>
-    <li> If no button is clicked within 1 minute since the alarm started ringing, it snoozes automatically   (and stops on the fourth snooze). 
+    <li> If no button is clicked within 1 minute since the alarm started ringing, it snoozes automatically (and stops on the fourth snooze). 
     </li>
 </ul>
+
