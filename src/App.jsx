@@ -100,7 +100,7 @@ function App() {
       </div>
       <footer className='w-[95vw] flex justify-end p-4'>
         <a
-          href='https://github.com/sudhanshuv1/alarm-app'
+          href='https://github.com/sudhanshuv1/alarm-clock'
           target='_blank'
           rel='noopener noreferrer'
           className='text-blue-600 hover:text-blue-700 underline'
