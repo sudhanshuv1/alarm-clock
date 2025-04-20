@@ -5,7 +5,7 @@ const AlarmItem = ({ item, handleDelete }) => {
   return (
     <li className="flex justify-between items-center p-4 bg-white border border-gray-600 rounded shadow-md">
       <div>
-        <p className="text-lg font-semibold">{item.alarmTime}</p>
+        <p className="digital7-font text-lg font-semibold">{item.alarmTime}</p>
         <div className="flex flex-wrap space-x-2 mt-2 max-h-21 overflow-y-auto">
           {item.days.map((day) => (
             <span
